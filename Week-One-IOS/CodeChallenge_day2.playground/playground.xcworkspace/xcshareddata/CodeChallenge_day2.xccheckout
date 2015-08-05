@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>CD813E93-893F-4092-B1DF-0AA44F1E4DD8</string>
+	<string>12FE9D21-6E7B-4483-8C6A-6198536B9795</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Sarah's Twitter</string>
+	<string>CodeChallenge_day2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2AF58E3FCE62FCF66D96FA8F87247488196E25FA</key>
 		<string>https://github.com/sahermanns/Week1.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Sarah's Twitter/Sarah's Twitter.xcodeproj</string>
+	<string>Week-One-IOS/CodeChallenge_day2.playground</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2AF58E3FCE62FCF66D96FA8F87247488196E25FA</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/sahermanns/Week1.git</string>
