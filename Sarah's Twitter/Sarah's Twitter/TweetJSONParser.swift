@@ -28,12 +28,24 @@ class TweetJSONParser {
               originalUser = retweetedStatus["user"] as? [String: AnyObject],
               originalUserName = originalUser["name"] as? String {
                 
-                let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: originalText,  originalUserName: originalUserName)
+//                the quote stuff will be added below quote, text and user
+                
+                if let quote = tweetObject["is_quote"] as? [String: AnyObject],
+                  originalQuote = quote["text"] as? String,
+                  originalQUser = quote["user"] as? [String: AnyObject],
+                  originalQUserName = originalQUser["name"] as? String {
+                    
+                    let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: originalText,  originalUserName: originalUserName, originalQuote: originalQuote, originalQUserName: originalQUserName)
+                    tweets.append(tweet)
+                    
+                }
+                
+                let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: originalText,  originalUserName: originalUserName, originalQuote: nil, originalQUserName: nil)
                 tweets.append(tweet)
                 
             } else {
               
-              let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: nil, originalUserName: nil)
+              let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: nil, originalUserName: nil, originalQuote: nil, originalQUserName: nil)
               tweets.append(tweet)
             }
         } else {

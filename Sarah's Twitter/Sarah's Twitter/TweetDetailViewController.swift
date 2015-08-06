@@ -20,14 +20,11 @@ class TweetDetailViewController: UIViewController, UINavigationControllerDelegat
   
   @IBOutlet weak var retweetOriginalText: UILabel!
   
-//  let text : String
-//  let userName : String
-//  let id : String
-//  let profileImageURL: String
-//  let originalText: String?
-//  let originalUserName: String?
+  @IBOutlet weak var quoteOriginalUserName: UILabel!
   
-  var selectedTweet = Tweet(text: "blahhh", userName: "Dummy", id: "383838", profileImageURL: "lookatme", originalText: "Dummy2", originalUserName: "blahblah")
+  @IBOutlet weak var quoteOriginalText: UILabel!
+  
+  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer")
   
 //  let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL)
 
@@ -40,7 +37,8 @@ class TweetDetailViewController: UIViewController, UINavigationControllerDelegat
 //      tweetDetailImage.image = self.selectedTweet.profileImageURL
       retweetOriginalText.text = self.selectedTweet.originalText
       retweetOriginalUserName.text = self.selectedTweet.originalUserName
-      
+      quoteOriginalUserName.text = self.selectedTweet.originalQUserName
+      quoteOriginalText.text = self.selectedTweet.originalQuote
     }
 
     override func didReceiveMemoryWarning() {
