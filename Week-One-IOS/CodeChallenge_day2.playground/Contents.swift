@@ -3,16 +3,9 @@
 import UIKit
 
 //CODING CHALLENGE: Write a function that reverses an array
-let array = [1,2,3,4,5,6,7,8,9,10]
-let arrayReversed = reverse(array)
+var array = [1,2,3,4,5,6,7,8,9,10]
+var arrayReversed = reverse(array)
 println(arrayReversed)
-
-for (index, x) in enumerate (array) {
-  insert( x, atIndex: 0)
-  insert(
-}
-
-
 
 
 //CODING CHALLENGE: FIZZ BUZZ!! :
@@ -25,4 +18,27 @@ for (index, x) in enumerate (array) {
 for var i = 1; i <= 100; i++ {
   println(i)
 }
+
+var fizzArray = [AnyObject]()
+
+
+for (index, x) in enumerate (array) {
+  if x % 3 == 0{
+    insert("Fizz", atIndex: x)
+  } else {
+    }
+  if x % 5 == 0 {
+    insert("Buzz", atIndex: x)
+  } else {
+    }
+  if x % 3 == 0 && x % 5 == 0 {
+    insert("Fizz Buzz", atIndex: x)
+  }else{
+    
+  }
+    
+  }
+  
+}
+ 
 

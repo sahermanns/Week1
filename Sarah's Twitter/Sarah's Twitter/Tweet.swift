@@ -13,5 +13,8 @@ struct Tweet {
   let userName : String
   let id : String
   let profileImageURL: String
+  let originalText: String?
+  let originalUserName: String?
+  
 }
 

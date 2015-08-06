@@ -13,10 +13,8 @@ class TweetJSONParser {
     
     var error : NSError?
     
-    if let rootObject = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &error) as?
-      [[String:AnyObject]]
+    if let rootObject = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &error) as? [[String:AnyObject]] {
       
-    {
       var tweets = [Tweet]()
       for tweetObject in rootObject {
         if let text = tweetObject["text"] as? String,
@@ -24,10 +22,22 @@ class TweetJSONParser {
           userInfo = tweetObject["user"] as? [String : AnyObject],
           userName = userInfo["name"] as? String,
           profileImageURL = userInfo["profile_image_url"] as? String {
-            let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL)
-            tweets.append(tweet)
+            
+            if let retweetedStatus = tweetObject["retweeted_status"] as? [String: AnyObject],
+              originalText = retweetedStatus["text"] as? String,
+              originalUser = retweetedStatus["user"] as? [String: AnyObject],
+              originalUserName = originalUser["name"] as? String {
+                
+                let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: originalText,  originalUserName: originalUserName)
+                tweets.append(tweet)
+                
+            } else {
+              
+              let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: nil, originalUserName: nil)
+              tweets.append(tweet)
+            }
         } else {
-          
+          //       could not enter loop
         }
         
       }
@@ -39,4 +49,3 @@ class TweetJSONParser {
     return nil
   }
 }
-

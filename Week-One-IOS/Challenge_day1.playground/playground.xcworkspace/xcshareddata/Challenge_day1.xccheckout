@@ -7,18 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C2BC2BD4-A2FC-4816-9D0E-925E3D80667E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Challenge_day1</string>
+	<string>playground</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2AF58E3FCE62FCF66D96FA8F87247488196E25FA</key>
 		<string>https://github.com/sahermanns/Week1.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Week-One-IOS/Challenge_day1.playground</string>
+	<string>Week-One-IOS/Challenge_day1.playground/playground.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2AF58E3FCE62FCF66D96FA8F87247488196E25FA</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/sahermanns/Week1.git</string>
