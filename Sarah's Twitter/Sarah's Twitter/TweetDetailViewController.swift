@@ -6,9 +6,12 @@
 //  Copyright (c) 2015 SASH. All rights reserved.
 //
 
+// Issue with this view controller is that selectedTweet is gone or not connected to what is needs to have ...help?!!
+
 import UIKit
 
 class TweetDetailViewController: UIViewController, UINavigationControllerDelegate  {
+
 
   @IBOutlet weak var tweetDetailImage: UIButton!
   
@@ -24,9 +27,7 @@ class TweetDetailViewController: UIViewController, UINavigationControllerDelegat
   
   @IBOutlet weak var quoteOriginalText: UILabel!
   
-  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer")
-  
-//  let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL)
+  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, profileBackgroundImageURL: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +40,18 @@ class TweetDetailViewController: UIViewController, UINavigationControllerDelegat
       retweetOriginalUserName.text = self.selectedTweet.originalUserName
       quoteOriginalUserName.text = self.selectedTweet.originalQUserName
       quoteOriginalText.text = self.selectedTweet.originalQuote
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-       // Dispose of any resources that can be recreated.
-    }
+  }
     
+      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showUser" {
+//          if let button = sender as? UIButton {
+//            
+//          }
+          let destinationVC = segue.destinationViewController as! userTimelineViewController
+          destinationVC.selectedTweet = selectedTweet
+    
+        }
+        
+    }
 
 }

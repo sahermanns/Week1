@@ -21,7 +21,10 @@ class TweetJSONParser {
           id = tweetObject["id_str"] as? String,
           userInfo = tweetObject["user"] as? [String : AnyObject],
           userName = userInfo["name"] as? String,
-          profileImageURL = userInfo["profile_image_url"] as? String {
+          screenName = userInfo["screen_name"] as? String,
+          location = userInfo["location"] as? String,
+          profileImageURL = userInfo["profile_image_url"] as? String,
+          profileBackgroundImageURL = userInfo["profile_background_image_url"] as? String {
             
             if let retweetedStatus = tweetObject["retweeted_status"] as? [String: AnyObject],
               originalText = retweetedStatus["text"] as? String,
@@ -35,17 +38,17 @@ class TweetJSONParser {
                   originalQUser = quote["user"] as? [String: AnyObject],
                   originalQUserName = originalQUser["name"] as? String {
                     
-                    let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: originalText,  originalUserName: originalUserName, originalQuote: originalQuote, originalQUserName: originalQUserName)
+                    let tweet = Tweet(text: text, userName: userName, screenName: screenName, location: location, id : id, profileImageURL : profileImageURL, originalText: originalText,  originalUserName: originalUserName, originalQuote: originalQuote, originalQUserName: originalQUserName, profileImage: nil, profileBackgroundImageURL: profileBackgroundImageURL)
                     tweets.append(tweet)
                     
                 }
                 
-                let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: originalText,  originalUserName: originalUserName, originalQuote: nil, originalQUserName: nil)
+                let tweet = Tweet(text: text, userName: userName, screenName: screenName, location: location, id : id, profileImageURL : profileImageURL, originalText: originalText,  originalUserName: originalUserName, originalQuote: nil, originalQUserName: nil, profileImage: nil, profileBackgroundImageURL: profileBackgroundImageURL)
                 tweets.append(tweet)
                 
             } else {
               
-              let tweet = Tweet(text: text, userName: userName, id : id, profileImageURL : profileImageURL, originalText: nil, originalUserName: nil, originalQuote: nil, originalQUserName: nil)
+              let tweet = Tweet(text: text, userName: userName, screenName: screenName, location: location, id : id, profileImageURL : profileImageURL, originalText: nil, originalUserName: nil, originalQuote: nil, originalQUserName: nil, profileImage: nil, profileBackgroundImageURL: profileBackgroundImageURL)
               tweets.append(tweet)
             }
         } else {
