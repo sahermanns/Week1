@@ -10,8 +10,7 @@
 
 import UIKit
 
-class TweetDetailViewController: UIViewController, UINavigationControllerDelegate  {
-
+class TweetDetailViewController: UIViewController, UINavigationControllerDelegate {
 
   @IBOutlet weak var tweetDetailImage: UIButton!
   
@@ -35,13 +34,46 @@ class TweetDetailViewController: UIViewController, UINavigationControllerDelegat
       title = self.selectedTweet.userName
       tweetDetailUserName.text = self.selectedTweet.userName
       tweetDetailText.text = self.selectedTweet.text
-//      tweetDetailImage.image = self.selectedTweet.profileImageURL
+      tweetDetailImage.setBackgroundImage(self.selectedTweet.profileImage, forState: UIControlState.Normal)
       retweetOriginalText.text = self.selectedTweet.originalText
       retweetOriginalUserName.text = self.selectedTweet.originalUserName
       quoteOriginalUserName.text = self.selectedTweet.originalQUserName
       quoteOriginalText.text = self.selectedTweet.originalQuote
+      
+//      if let profileImage = tweet.profileImage {
+//        cell.profileImage.image = profileImage
+//      }else {
+//        imageQueue.addOperationWithBlock({ () -> Void in
+//          if let imageURL = NSURL(string: tweet.profileImageURL),
+//            imageData = NSData(contentsOfURL: imageURL),
+//            image = UIImage(data: imageData) {
+//              var size : CGSize
+//              switch UIScreen.mainScreen().scale {
+//              case 2:
+//                size = CGSize(width: 140, height: 140)
+//              case 3:
+//                size = CGSize(width: 210, height: 210)
+//              default:
+//                size = CGSize(width: 70, height: 70)
+//                
+//              }
+//              let resizedImage = ImageResizer.resizeImage(image, size: size)
+//              
+//              NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+//                tweet.profileImage = resizedImage
+//                self.tweets[indexPath.row] = tweet
+//                if cell.tag == tag {
+//                  cell.profileImage.image = resizedImage
+//                }
+//              })
+//          }
+//        })
+//      }
+      
+      
+      
   }
-    
+  
       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showUser" {
 //          if let button = sender as? UIButton {
