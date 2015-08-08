@@ -20,10 +20,18 @@ class userTimelineViewController: UIViewController {
   @IBOutlet weak var userName: UILabel!
   @IBOutlet weak var userLocation: UILabel!
   
-  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, profileBackgroundImageURL: nil)
+  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, profileBackgroundImageURL: nil, profileBackgroundImage: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      title = self.selectedTweet.userName
+      userName.text = self.selectedTweet.userName
+      profileImage.image = self.selectedTweet.profileImage
+      userLocation.text = self.selectedTweet.location
+      
+//      userBackgroundImage.setBackground(self.selectedTweet.profileBackgroundImage, forState: UIControlState.Normal)
+//      tweetDetailImage.setBackgroundImage(self.selectedTweet.profileImage, forState: UIControlState.Normal
 
       tableView.estimatedRowHeight = 70
       tableView.rowHeight = UITableViewAutomaticDimension
@@ -99,6 +107,37 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
       }
     })
   }
+  
+//        if let profileBackgroundImage = selectedTweet.profileBackgroundImage {
+//          view.profileBackgroundImage.image = profileBackgroundImage
+//        }else {
+//          imageQueue.addOperationWithBlock({ () -> Void in
+//            if let imageURL = NSURL(string: selectedTweet.profileBackgroundImageURL),
+//              imageData = NSData(contentsOfURL: imageURL),
+//              image = UIImage(data: imageData) {
+//                var size : CGSize
+//                switch UIScreen.mainScreen().scale {
+//                case 2:
+//                  size = CGSize(width: 140, height: 140)
+//                case 3:
+//                  size = CGSize(width: 210, height: 210)
+//                default:
+//                  size = CGSize(width: 70, height: 70)
+//  
+//                }
+//                let resizedImage = ImageResizer.resizeImage(image, size: size)
+//  
+//                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+//                  selectedTweet.profileBackgroundImage = resizedImage
+//                  self.tweets[indexPath.row] = tweet
+//                  if view.tag == tag {
+//                    view.profileBackgroundImage.image = resizedImage
+//                  }
+//                })
+//            }
+//          })
+//        }
+
     return cell
   }
 }

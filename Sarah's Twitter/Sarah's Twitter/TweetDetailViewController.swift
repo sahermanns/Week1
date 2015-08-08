@@ -26,7 +26,7 @@ class TweetDetailViewController: UIViewController, UINavigationControllerDelegat
   
   @IBOutlet weak var quoteOriginalText: UILabel!
   
-  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, profileBackgroundImageURL: nil)
+  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, profileBackgroundImageURL: nil, profileBackgroundImage: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,45 +40,10 @@ class TweetDetailViewController: UIViewController, UINavigationControllerDelegat
       quoteOriginalUserName.text = self.selectedTweet.originalQUserName
       quoteOriginalText.text = self.selectedTweet.originalQuote
       
-//      if let profileImage = tweet.profileImage {
-//        cell.profileImage.image = profileImage
-//      }else {
-//        imageQueue.addOperationWithBlock({ () -> Void in
-//          if let imageURL = NSURL(string: tweet.profileImageURL),
-//            imageData = NSData(contentsOfURL: imageURL),
-//            image = UIImage(data: imageData) {
-//              var size : CGSize
-//              switch UIScreen.mainScreen().scale {
-//              case 2:
-//                size = CGSize(width: 140, height: 140)
-//              case 3:
-//                size = CGSize(width: 210, height: 210)
-//              default:
-//                size = CGSize(width: 70, height: 70)
-//                
-//              }
-//              let resizedImage = ImageResizer.resizeImage(image, size: size)
-//              
-//              NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//                tweet.profileImage = resizedImage
-//                self.tweets[indexPath.row] = tweet
-//                if cell.tag == tag {
-//                  cell.profileImage.image = resizedImage
-//                }
-//              })
-//          }
-//        })
-//      }
-      
-      
-      
   }
   
       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showUser" {
-//          if let button = sender as? UIButton {
-//            
-//          }
           let destinationVC = segue.destinationViewController as! userTimelineViewController
           destinationVC.selectedTweet = selectedTweet
     

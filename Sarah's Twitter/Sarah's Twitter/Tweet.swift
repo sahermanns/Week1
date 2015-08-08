@@ -21,6 +21,7 @@ struct Tweet {
   let originalQUserName: String?
   var profileImage : UIImage?
   let profileBackgroundImageURL: String?
+  var profileBackgroundImage :UIImage?
   
 }
 

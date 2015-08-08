@@ -138,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				3EA34D341B6FE236001A9554 /* ViewController.swift */,
+				3EED9D0D1B730CE600C588EF /* TweetDetailViewController.swift */,
+				3EED9D151B75086000C588EF /* userTimelineViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -160,8 +162,6 @@
 			children = (
 				3EED9D0B1B72B11A00C588EF /* TweetCell.swift */,
 				3EA34D361B6FE236001A9554 /* Main.storyboard */,
-				3EED9D151B75086000C588EF /* userTimelineViewController.swift */,
-				3EED9D0D1B730CE600C588EF /* TweetDetailViewController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
