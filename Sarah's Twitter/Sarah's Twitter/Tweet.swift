@@ -20,8 +20,8 @@ struct Tweet {
   let originalQuote: String?
   let originalQUserName: String?
   var profileImage : UIImage?
-  let profileBackgroundImageURL: String?
-  var profileBackgroundImage :UIImage?
+  let backgroundImageURL: String?
+  var backgroundImage :UIImage?
   
 }
 

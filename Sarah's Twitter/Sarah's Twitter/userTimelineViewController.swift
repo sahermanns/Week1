@@ -15,12 +15,12 @@ class userTimelineViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-  @IBOutlet weak var userBackgroundImage: UIView!
+  @IBOutlet weak var backgroundImage: UIImageView!
   @IBOutlet weak var profileImage: UIImageView!
   @IBOutlet weak var userName: UILabel!
   @IBOutlet weak var userLocation: UILabel!
   
-  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, profileBackgroundImageURL: nil, profileBackgroundImage: nil)
+  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, backgroundImageURL: nil, backgroundImage: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +29,8 @@ class userTimelineViewController: UIViewController {
       userName.text = self.selectedTweet.userName
       profileImage.image = self.selectedTweet.profileImage
       userLocation.text = self.selectedTweet.location
+      backgroundImage.image = self.selectedTweet.backgroundImage
       
-//      userBackgroundImage.setBackground(self.selectedTweet.profileBackgroundImage, forState: UIControlState.Normal)
-//      tweetDetailImage.setBackgroundImage(self.selectedTweet.profileImage, forState: UIControlState.Normal
 
       tableView.estimatedRowHeight = 70
       tableView.rowHeight = UITableViewAutomaticDimension
@@ -108,11 +107,11 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
     })
   }
   
-//        if let profileBackgroundImage = selectedTweet.profileBackgroundImage {
-//          view.profileBackgroundImage.image = profileBackgroundImage
+//        if let backgroundImage = selectedTweet.backgroundImage {
+//          backgroundImage.UIImage = backgroundImage
 //        }else {
 //          imageQueue.addOperationWithBlock({ () -> Void in
-//            if let imageURL = NSURL(string: selectedTweet.profileBackgroundImageURL),
+//            if let imageURL = NSURL(string: self.selectedTweet.backgroundImageURL!),
 //              imageData = NSData(contentsOfURL: imageURL),
 //              image = UIImage(data: imageData) {
 //                var size : CGSize
@@ -128,11 +127,10 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
 //                let resizedImage = ImageResizer.resizeImage(image, size: size)
 //  
 //                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//                  selectedTweet.profileBackgroundImage = resizedImage
+//                  self.selectedTweet.backgroundImage = resizedImage
 //                  self.tweets[indexPath.row] = tweet
-//                  if view.tag == tag {
-//                    view.profileBackgroundImage.image = resizedImage
-//                  }
+//                 
+//                  let resizedImage = self.backgroundImage.image
 //                })
 //            }
 //          })

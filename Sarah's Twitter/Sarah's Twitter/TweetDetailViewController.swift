@@ -26,7 +26,7 @@ class TweetDetailViewController: UIViewController, UINavigationControllerDelegat
   
   @IBOutlet weak var quoteOriginalText: UILabel!
   
-  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, profileBackgroundImageURL: nil, profileBackgroundImage: nil)
+  var selectedTweet = Tweet(text: "blahhh", userName: "Dum", screenName: "dork", location: "nowhere", id: "383838", profileImageURL: "lookatme", originalText: "Dummer", originalUserName: "blahblah", originalQuote: "shut up", originalQUserName: "dummerer", profileImage: nil, backgroundImageURL: nil, backgroundImage: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
